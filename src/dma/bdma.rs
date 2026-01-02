@@ -515,7 +515,7 @@ where
     }
 
     #[inline(always)]
-    #[cfg(not(feature = "rm0455"))]
+    #[cfg(all(not(feature = "rm0455"), not(feature = "cm4")))]
     fn set_trbuff(&mut self, _trbuff: bool) {
         // BDMA does not have a TRBUFF bit
     }

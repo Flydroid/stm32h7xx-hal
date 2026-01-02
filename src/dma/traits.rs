@@ -168,7 +168,7 @@ pub trait DoubleBufferedStream: Stream + Sealed {
     /// Set the direction (dir) of the DMA stream.
     fn set_direction(&mut self, direction: DmaDirection);
 
-    #[cfg(not(feature = "rm0455"))]
+    #[cfg(all(not(feature = "rm0455"), not(feature = "cm4")))]
     /// Enable bufferable transfers
     fn set_trbuff(&mut self, trbuff: bool);
 
