@@ -682,7 +682,7 @@ where
     }
 
     #[inline(always)]
-    #[cfg(not(feature = "rm0455"))]
+    #[cfg(all(not(feature = "rm0455"), not(feature = "cm4")))]
     fn set_trbuff(&mut self, trbuff: bool) {
         //NOTE(unsafe) We only access the registers that belongs to the StreamX
         unsafe { Self::stream() }

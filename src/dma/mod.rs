@@ -443,7 +443,7 @@ macro_rules! db_transfer_def {
                 stream.set_direction(DIR::direction());
 
                 // Enable bufferable transfers
-                #[cfg(not(feature = "rm0455"))]
+                #[cfg(not(feature = "rm0455"), not(feature = "cm4"))]
                 if PERIPHERAL::TRBUFF {
                     stream.set_trbuff(true);
                 }
